@@ -29,13 +29,17 @@ import { MatCardModule } from '@angular/material/card';
 import { NavComponent } from './components/nav/nav.component';
 import { HomeComponent } from './views/home/home.component';
 import { GamesDestaqueComponent } from './games-destaque/games-destaque.component';
+import { MyOrdersComponent } from './views/my-orders/my-orders.component';
+import { OrdersHistoryComponent } from './orders-history/orders-history.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavComponent,
     HomeComponent,
-    GamesDestaqueComponent
+    GamesDestaqueComponent,
+    MyOrdersComponent,
+    OrdersHistoryComponent
   ],
   imports: [
     BrowserModule,
