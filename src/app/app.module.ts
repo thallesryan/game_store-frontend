@@ -28,10 +28,11 @@ import { MatListModule } from '@angular/material/list';
 import { MatCardModule } from '@angular/material/card';
 import { NavComponent } from './components/nav/nav.component';
 import { HomeComponent } from './views/home/home.component';
-import { GamesDestaqueComponent } from './games-destaque/games-destaque.component';
+import { GamesDestaqueComponent } from './components/games-destaque/games-destaque.component';
 import { MyOrdersComponent } from './views/my-orders/my-orders.component';
-import { OrdersHistoryComponent } from './orders-history/orders-history.component';
+import { OrdersHistoryComponent } from './components/orders-history/orders-history.component';
 import { LoginComponent } from './views/login/login.component';
+import { FormLoginComponent } from './components/form-login/form-login.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { LoginComponent } from './views/login/login.component';
     GamesDestaqueComponent,
     MyOrdersComponent,
     OrdersHistoryComponent,
-    LoginComponent
+    LoginComponent,
+    FormLoginComponent
   ],
   imports: [
     BrowserModule,
