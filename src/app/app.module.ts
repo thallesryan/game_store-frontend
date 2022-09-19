@@ -31,6 +31,7 @@ import { HomeComponent } from './views/home/home.component';
 import { GamesDestaqueComponent } from './games-destaque/games-destaque.component';
 import { MyOrdersComponent } from './views/my-orders/my-orders.component';
 import { OrdersHistoryComponent } from './orders-history/orders-history.component';
+import { LoginComponent } from './views/login/login.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { OrdersHistoryComponent } from './orders-history/orders-history.componen
     HomeComponent,
     GamesDestaqueComponent,
     MyOrdersComponent,
-    OrdersHistoryComponent
+    OrdersHistoryComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

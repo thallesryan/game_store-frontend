@@ -1,6 +1,8 @@
+import { getLocaleDateFormat } from '@angular/common';
 import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
+import { Order } from '../models/Order';
 
 @Component({
   selector: 'app-orders-history',
@@ -9,9 +11,13 @@ import { MatTableDataSource } from '@angular/material/table';
 })
 export class OrdersHistoryComponent implements OnInit, AfterViewInit {
 
+  orders:Order[] = [{id:1, date: '25/04/2021',total:200}]
   
-    displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
-    dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
+    //displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
+    //dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
+
+   displayedColumns: string[] = ['id', 'date', 'total', 'actions'];
+   dataSource = new MatTableDataSource<Order>(this.orders);
   
     @ViewChild(MatPaginator) paginator: MatPaginator
 
