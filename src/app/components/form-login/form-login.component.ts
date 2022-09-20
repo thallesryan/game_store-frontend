@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
 import { Credentials } from 'src/app/models/Credentials';
 
 @Component({
@@ -9,25 +10,17 @@ import { Credentials } from 'src/app/models/Credentials';
 })
 export class FormLoginComponent implements OnInit {
 
-  constructor(private formBuilder: FormBuilder ) {}
-
-  creds:Credentials = {
-    email: '',
-    password:''
-  }
+  constructor(private formBuilder: FormBuilder, private toast:ToastrService ) {}
 
   public loginForm:FormGroup = this.formBuilder.group({
-    email: ['', Validators.required, Validators.email],
-    password:['', Validators.required, Validators.minLength(3)]
+    email: ['', [Validators.required, Validators.email] ],
+    password:['', [Validators.required, Validators.minLength(3)]]
   });
 
-  validateFields():boolean{
-    return this.loginForm.valid
+  login(){
+    this.toast.error('Usuário e/ou senha invlidos', 'Login')
+    this.loginForm.get('password').setValue('')
   }
-  
-
-  
-
 
   ngOnInit(): void {
   }

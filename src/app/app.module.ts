@@ -33,6 +33,7 @@ import { MyOrdersComponent } from './views/my-orders/my-orders.component';
 import { OrdersHistoryComponent } from './components/orders-history/orders-history.component';
 import { LoginComponent } from './views/login/login.component';
 import { FormLoginComponent } from './components/form-login/form-login.component';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -68,7 +69,12 @@ import { FormLoginComponent } from './components/form-login/form-login.component
     MatTableModule,
     MatIconModule,
     MatListModule,
-    MatCardModule
+    MatCardModule,
+    ToastrModule.forRoot({
+      timeOut:4000,
+      closeButton:true,
+      progressBar:true
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
