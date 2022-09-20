@@ -1,1 +1,16 @@
-<p>form-login works!</p>
+<div class="container mat-elevation-z8">
+    <form class="form" [formGroup]="loginForm" >
+        <img src="../../../assets/stadia_controller_FILL0_wght400_GRAD0_opsz48.svg">
+        <mat-form-field class="full-width" appearance="fill">
+            <mat-label>E-mail</mat-label>
+            <input matInput placeholder="E-mail" [(ngModel)]="creds.email" formControlName="email" >
+        </mat-form-field>
+
+        <mat-form-field class="full-width" appearance="fill">
+            <mat-label>Senha</mat-label>
+            <input matInput type="password" placeholder="Senha" [(ngModel)]="creds.password" formControlName="password">
+        </mat-form-field>
+
+        <button [disabled]="!validateFields()" mat-raised-button color="primary">login</button>
+    </form>
+</div>

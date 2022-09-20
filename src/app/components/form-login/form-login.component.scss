@@ -1,0 +1,19 @@
+.form{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    padding: 1rem 1rem;
+    
+}
+
+.container{
+    background-color: rgb(229, 221, 221);
+    border-radius: 10px;
+    width:22rem;
+}
+
+img{
+    height: 15rem;
+    width: 80%;
+    margin: auto;
+}
