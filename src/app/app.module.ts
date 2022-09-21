@@ -34,6 +34,7 @@ import { OrdersHistoryComponent } from './components/orders-history/orders-histo
 import { LoginComponent } from './views/login/login.component';
 import { FormLoginComponent } from './components/form-login/form-login.component';
 import { ToastrModule } from 'ngx-toastr';
+import { AuthInterceptorProvider } from './interceptors/auth.interceptor';
 
 @NgModule({
   declarations: [
@@ -76,7 +77,7 @@ import { ToastrModule } from 'ngx-toastr';
       progressBar:true
     })
   ],
-  providers: [],
+  providers: [AuthInterceptorProvider],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
