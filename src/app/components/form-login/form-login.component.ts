@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { Credentials } from 'src/app/models/Credentials';
 import { AuthService } from 'src/app/services/auth.service';
@@ -11,7 +12,7 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class FormLoginComponent implements OnInit {
 
-  constructor(private formBuilder: FormBuilder, private toast:ToastrService, private authService: AuthService) {}
+  constructor(private formBuilder: FormBuilder, private toast:ToastrService, private authService: AuthService, private router:Router) {}
 
   public loginForm:FormGroup = this.formBuilder.group({
     email: ['', [Validators.required, Validators.email] ],
@@ -20,8 +21,12 @@ export class FormLoginComponent implements OnInit {
 
   
   login(){
-    this.authService.authenticate({email:this.loginForm.value.email,password:this.loginForm.value.password}).subscribe({
-      next: (resp) => this.toast.info(resp.headers.get('authorization')),
+    let creds = {email:this.loginForm.value.email,password:this.loginForm.value.password}
+    this.authService.authenticate(creds).subscribe({
+      next: (resp) => {
+        this.authService.sucessfulLogin(resp.headers.get('authorization').substring(7))
+        this.router.navigate(['home'])
+      },
       error: (er) => this.toast.error('Usuário e/ou senha inválidos')
     })
   }
