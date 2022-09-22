@@ -27,9 +27,15 @@ export class AuthService {
 
   isAuthenticated(){
     let token = localStorage.getItem('token')
+    //console.log( this.jwtService.decodeToken(token).roles)
     return token != null ? !this.jwtService.isTokenExpired(token): false;
   }
 
+  isAdmin(): boolean{
+     let token = localStorage.getItem('token')
+      let roles = this.jwtService.decodeToken(token).roles
+      return roles.includes('ADMIN')
+  }
   logout(){
     localStorage.clear();
   }

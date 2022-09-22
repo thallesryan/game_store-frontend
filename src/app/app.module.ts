@@ -35,6 +35,7 @@ import { LoginComponent } from './views/login/login.component';
 import { FormLoginComponent } from './components/form-login/form-login.component';
 import { ToastrModule } from 'ngx-toastr';
 import { AuthInterceptorProvider } from './interceptors/auth.interceptor';
+import { GamesComponent } from './admin/views/games/games.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { AuthInterceptorProvider } from './interceptors/auth.interceptor';
     MyOrdersComponent,
     OrdersHistoryComponent,
     LoginComponent,
-    FormLoginComponent
+    FormLoginComponent,
+    GamesComponent
   ],
   imports: [
     BrowserModule,

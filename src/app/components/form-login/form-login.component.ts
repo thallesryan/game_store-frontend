@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { Credentials } from 'src/app/models/Credentials';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
@@ -18,7 +17,6 @@ export class FormLoginComponent implements OnInit {
     email: ['', [Validators.required, Validators.email] ],
     password:['', [Validators.required, Validators.minLength(3)]]
   });
-
   
   login(){
     let creds = {email:this.loginForm.value.email,password:this.loginForm.value.password}
@@ -31,7 +29,5 @@ export class FormLoginComponent implements OnInit {
     })
   }
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }
