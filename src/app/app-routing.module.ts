@@ -16,12 +16,11 @@ const routes: Routes = [
   {
     path:'', component:NavComponent,canActivate:[AuthGuard], children:[
       {path:'home', component:HomeComponent},
-      {path:'orders', component:MyOrdersComponent}
+      {path:'orders', component:MyOrdersComponent},
+      {path:'admin',component:GamesComponent, canActivate:[AdminGuard]}
     ]
 },
-{
-  path:'admin',component:GamesComponent, canActivate:[AdminGuard]
-}
+
   ];
 
 @NgModule({

@@ -12,6 +12,8 @@ export class NavComponent implements OnInit {
 
   constructor(private router:Router, private authService:AuthService, private toast:ToastrService) { }
 
+  isAdmin:boolean = this.authService.isAdmin();
+  
   ngOnInit(): void {
     this.router.navigate(['home'])
   }
