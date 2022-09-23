@@ -1,3 +1,4 @@
+Frontend do Projeto de uma Game Store. Está sendo desenvolvido em Angular.
 # GameStore
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.0.
