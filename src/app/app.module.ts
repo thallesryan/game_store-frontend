@@ -35,7 +35,8 @@ import { LoginComponent } from './views/login/login.component';
 import { FormLoginComponent } from './components/form-login/form-login.component';
 import { ToastrModule } from 'ngx-toastr';
 import { AuthInterceptorProvider } from './interceptors/auth.interceptor';
-import { GamesComponent } from './admin/views/games/games.component';
+import { CrudGamesComponent } from './admin/components/crud-games/crud-games.component';
+import { AdminComponent } from './admin/views/admin/admin.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { GamesComponent } from './admin/views/games/games.component';
     OrdersHistoryComponent,
     LoginComponent,
     FormLoginComponent,
-    GamesComponent
+    CrudGamesComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,
