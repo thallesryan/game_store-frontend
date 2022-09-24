@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CrudGamesComponent } from './admin/components/crud-games/crud-games.component';
+import { GameCreateComponent } from './admin/components/game-create/game-create.component';
 import { AdminComponent } from './admin/views/admin/admin.component';
 
 import { AppComponent } from './app.component';
@@ -19,7 +20,10 @@ const routes: Routes = [
     path:'', component:NavComponent,canActivate:[AuthGuard], children:[
       {path:'home', component:HomeComponent},
       {path:'orders', component:MyOrdersComponent},
-      {path:'admin',component:AdminComponent, canActivate:[AdminGuard],children:[{path:'games', component:CrudGamesComponent}]}
+      {path:'admin',component:AdminComponent, canActivate:[AdminGuard],
+        children:[{path:'games', component:CrudGamesComponent}, 
+                  {path:'games/newgame', component:GameCreateComponent}]
+      }
     ]
 },
 

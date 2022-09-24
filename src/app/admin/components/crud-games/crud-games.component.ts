@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
@@ -18,7 +19,7 @@ export class CrudGamesComponent implements OnInit {
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
-  constructor(private service: GamesService) {}
+  constructor(private service: GamesService, private router:Router) {}
 
   ngOnInit(): void {
     this.findAll();
@@ -31,10 +32,11 @@ export class CrudGamesComponent implements OnInit {
         this.dataSource = new MatTableDataSource<Game>(resposta['content']);
         this.dataSource.paginator = this.paginator;
        }}
-     
-    
-    
     )
+  }
+
+  newGame():void{
+      this.router.navigate(['newGame'])
   }
 
   applyFilter(event: Event) {
