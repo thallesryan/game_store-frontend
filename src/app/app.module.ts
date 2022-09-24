@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -37,7 +37,11 @@ import { ToastrModule } from 'ngx-toastr';
 import { AuthInterceptorProvider } from './interceptors/auth.interceptor';
 import { CrudGamesComponent } from './admin/components/crud-games/crud-games.component';
 import { AdminComponent } from './admin/views/admin/admin.component';
+import { registerLocaleData } from '@angular/common';
+import localePt from '@angular/common/locales/pt';
+import { GameCreateComponent } from './admin/components/game-create/game-create.component' 
 
+registerLocaleData(localePt) 
 @NgModule({
   declarations: [
     AppComponent,
@@ -49,7 +53,8 @@ import { AdminComponent } from './admin/views/admin/admin.component';
     LoginComponent,
     FormLoginComponent,
     CrudGamesComponent,
-    AdminComponent
+    AdminComponent,
+    GameCreateComponent
   ],
   imports: [
     BrowserModule,
@@ -81,7 +86,11 @@ import { AdminComponent } from './admin/views/admin/admin.component';
       progressBar:true
     })
   ],
-  providers: [AuthInterceptorProvider],
-  bootstrap: [AppComponent]
+  providers: [AuthInterceptorProvider, {
+    provide: LOCALE_ID,
+    useValue: 'pt-BR'
+    }],
+  bootstrap: [AppComponent], 
+  
 })
 export class AppModule { }
