@@ -40,6 +40,9 @@ import { AdminComponent } from './admin/views/admin/admin.component';
 import { registerLocaleData } from '@angular/common';
 import localePt from '@angular/common/locales/pt';
 import { GameCreateComponent } from './admin/components/game-create/game-create.component' 
+import { NgxMaskModule } from 'ngx-mask';
+import { GameEditComponent } from './admin/components/game-edit/game-edit.component';
+
 
 registerLocaleData(localePt) 
 @NgModule({
@@ -54,7 +57,8 @@ registerLocaleData(localePt)
     FormLoginComponent,
     CrudGamesComponent,
     AdminComponent,
-    GameCreateComponent
+    GameCreateComponent,
+    GameEditComponent
   ],
   imports: [
     BrowserModule,
@@ -80,11 +84,14 @@ registerLocaleData(localePt)
     MatIconModule,
     MatListModule,
     MatCardModule,
+    NgxMaskModule.forRoot(
+      {dropSpecialCharacters: false}
+      ),
     ToastrModule.forRoot({
       timeOut:4000,
       closeButton:true,
       progressBar:true
-    })
+    }),
   ],
   providers: [AuthInterceptorProvider, {
     provide: LOCALE_ID,

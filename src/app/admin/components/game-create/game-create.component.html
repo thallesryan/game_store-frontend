@@ -1,1 +1,20 @@
-<p>game-create works!</p>
+<div class="containerForm">
+    <form [formGroup]="gameForm">
+        <mat-form-field class="full-width" appearance="fill">
+            <mat-label>Nome</mat-label>
+            <input matInput placeholder="Nome"  formControlName="name" >
+        </mat-form-field>
+
+        <mat-form-field class="full-width" appearance="fill">
+            <mat-label>preço</mat-label>
+            <input type="number" matInput placeholder="Preço"  formControlName="price" >
+        </mat-form-field>
+
+        <mat-form-field class="full-width" appearance="fill">
+            <mat-label>Quantidade</mat-label>
+            <input type="number" matInput placeholder="Quantidade"  formControlName="quantity" >
+        </mat-form-field>
+
+        <button [disabled]="gameForm.invalid" mat-raised-button color="primary" (click)="save()">Cadastrar</button>
+    </form>
+</div>

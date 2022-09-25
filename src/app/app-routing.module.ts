@@ -1,3 +1,5 @@
+import { GameEditComponent } from './admin/components/game-edit/game-edit.component';
+
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CrudGamesComponent } from './admin/components/crud-games/crud-games.component';
@@ -22,7 +24,9 @@ const routes: Routes = [
       {path:'orders', component:MyOrdersComponent},
       {path:'admin',component:AdminComponent, canActivate:[AdminGuard],
         children:[{path:'games', component:CrudGamesComponent}, 
-                  {path:'games/newgame', component:GameCreateComponent}]
+                  {path:'games/newgame', component:GameCreateComponent},
+                  {path:'games/edit/:id', component: GameEditComponent}
+                ]
       }
     ]
 },

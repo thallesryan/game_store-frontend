@@ -14,7 +14,7 @@ export class CrudGamesComponent implements OnInit {
 
   ELEMENT_DATA: Game[] = []
 
-  displayedColumns: string[] = ['id', 'nome', 'preco'];
+  displayedColumns: string[] = ['id', 'name', 'price', 'quantity', 'actions'];
   dataSource = new MatTableDataSource<Game>(this.ELEMENT_DATA);
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
@@ -27,7 +27,6 @@ export class CrudGamesComponent implements OnInit {
 
   findAll() {
     this.service.findAll().subscribe({next: resposta => {
-        console.log(resposta['content'])
         this.ELEMENT_DATA = resposta['content']
         this.dataSource = new MatTableDataSource<Game>(resposta['content']);
         this.dataSource.paginator = this.paginator;

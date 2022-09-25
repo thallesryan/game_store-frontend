@@ -1,5 +1,6 @@
 export interface Game {
     id?: number
-    nome:string
-    preco?:string 
+    name:string
+    price?:string
+    quantity?:number
 }

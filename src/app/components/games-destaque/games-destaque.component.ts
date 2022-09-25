@@ -9,7 +9,7 @@ import { Game } from 'src/app/models/Game';
 })
 export class GamesDestaqueComponent implements OnInit {
 
-  games:Array<Game> = [{nome: "The Last Of Us"}, {nome:"Horizon Zero Dawn"}]
+  games:Array<Game> = [{name: "The Last Of Us"}, {name:"Horizon Zero Dawn"}]
   
   constructor() { }
 
