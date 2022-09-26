@@ -12,4 +12,7 @@ export class GameCardComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  addCart(){
+    
+  }
 }

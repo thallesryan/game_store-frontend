@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GamesComponent implements OnInit {
 
-  games:Game[] = [{name:'Tlou'}, {name:'Horizon'}]
+  games:Game[] = [{name:'Tlou', price:100+''}, {name:'Horizon', price:150+''}]
   
   constructor() { }
 

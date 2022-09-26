@@ -16,3 +16,14 @@
    display: flex;
    flex-wrap: wrap;
 }
+
+mat-card-actions{
+  display: flex;
+  justify-content: space-around;
+}
+mat-card-header, mat-card-content{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
