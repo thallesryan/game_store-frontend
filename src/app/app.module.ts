@@ -42,6 +42,7 @@ import localePt from '@angular/common/locales/pt';
 import { GameCreateComponent } from './admin/components/game-create/game-create.component' 
 import { NgxMaskModule } from 'ngx-mask';
 import { GameEditComponent } from './admin/components/game-edit/game-edit.component';
+import { UserListComponent } from './admin/components/user-list/user-list.component';
 
 
 registerLocaleData(localePt) 
@@ -58,7 +59,8 @@ registerLocaleData(localePt)
     CrudGamesComponent,
     AdminComponent,
     GameCreateComponent,
-    GameEditComponent
+    GameEditComponent,
+    UserListComponent
   ],
   imports: [
     BrowserModule,

@@ -13,6 +13,7 @@ import { AuthGuard } from './guards/auth.guard';
 import { HomeComponent } from './views/home/home.component';
 import { LoginComponent } from './views/login/login.component';
 import { MyOrdersComponent } from './views/my-orders/my-orders.component';
+import { UserListComponent } from './admin/components/user-list/user-list.component';
 
 const routes: Routes = [
   {
@@ -25,7 +26,8 @@ const routes: Routes = [
       {path:'admin',component:AdminComponent, canActivate:[AdminGuard],
         children:[{path:'games', component:CrudGamesComponent}, 
                   {path:'games/newgame', component:GameCreateComponent},
-                  {path:'games/edit/:id', component: GameEditComponent}
+                  {path:'games/edit/:id', component: GameEditComponent},
+                  {path:'users', component: UserListComponent}
                 ]
       }
     ]
