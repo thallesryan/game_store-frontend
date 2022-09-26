@@ -1,0 +1,19 @@
+.containerForm{
+    width: 35rem;
+    margin: auto;
+    padding: 1rem;
+    border-radius: .6rem;
+    margin-top: 100px;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    width: 100%;
+   
+    button{
+        margin: 10px;
+    }
+}
+

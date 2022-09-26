@@ -1,39 +1,52 @@
-<mat-drawer-container class="container" autosize>
-    <mat-drawer #drawer class="sidenav" mode="side" opened>
-       <mat-nav-list class="nav-list">
-          <a mat-list-item routerLink="home">
-             <i class="material-icons">home</i>
-             Home
-          </a>
-          <a mat-list-item routerLink="games">
-             <i class="material-icons">videogame_asset</i>
-             Games
-          </a>
+<nav class="container">
+  <mat-nav-list class="nav-list">
+    <div>
+      <a mat-list-item routerLink="home" class="menuContent">
+        <i class="material-icons">home</i>
+        Home
+      </a>
+    </div>
+    <div>
+      <a mat-list-item routerLink="games">
+        <i class="material-icons">videogame_asset</i>
+        Games
+      </a>
+    </div>
+    <div>
+      <a mat-list-item routerLink="orders">
+        <i class="material-icons">receipt</i>
+        Meus Pedidos
+      </a>
+    </div>
+    <div>
+      <a mat-list-item href="" target="_blank">
+        <i class="material-icons">code</i>
+        Github
+      </a>
+    </div>
+    <div>
+      <a *ngIf="isAdmin" mat-list-item routerLink="admin">
+        <i class="material-icons">admin_panel_settings</i>
+        Admin
+      </a>
+    </div>
+    <div>
+      <a mat-list-item routerLink="cart">
+        <i class="material-icons">shopping_cart</i>
+      </a>
+    </div>
+    <div>
+      <a mat-list-item (click)="logout()">
+        <i class="material-icons">logout</i>
+        Logout
+      </a>
+    </div>
+  </mat-nav-list>
+</nav>
 
-          <a mat-list-item routerLink="orders">
-            <i class="material-icons">receipt</i>
-            Meus Pedidos
-         </a>
-          <a mat-list-item href="" target="_blank">
-             <i class="material-icons">code</i>
-             Github
-          </a>
-          <a *ngIf="isAdmin" mat-list-item routerLink="admin">
-            <i class="material-icons">admin_panel_settings</i>
-            Admin
-         </a>
-          <a mat-list-item (click)="logout()">
-            <i class="material-icons">logout</i>
-            Logout
-         </a>
-       </mat-nav-list>
-    </mat-drawer>
- 
-    <div class="sidenav-content">
-       
-      <!-- <button class="menu mat-elevation-z8" (click)="drawer.toggle()" mat-icon-button>
+<div class="sidenav-content">
+  <!-- <button class="menu mat-elevation-z8" (click)="drawer.toggle()" mat-icon-button>
           <mat-icon>menu</mat-icon>
        </button> -->
-       <router-outlet></router-outlet>
-    </div>
- </mat-drawer-container>
+  <router-outlet></router-outlet>
+</div>

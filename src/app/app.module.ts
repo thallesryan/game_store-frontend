@@ -43,6 +43,9 @@ import { GameCreateComponent } from './admin/components/game-create/game-create.
 import { NgxMaskModule } from 'ngx-mask';
 import { GameEditComponent } from './admin/components/game-edit/game-edit.component';
 import { UserListComponent } from './admin/components/user-list/user-list.component';
+import { CartComponent } from './views/cart/cart.component';
+import { GamesComponent } from './views/games/games.component';
+import { GameCardComponent } from './components/game-card/game-card.component';
 
 
 registerLocaleData(localePt) 
@@ -60,7 +63,10 @@ registerLocaleData(localePt)
     AdminComponent,
     GameCreateComponent,
     GameEditComponent,
-    UserListComponent
+    UserListComponent,
+    CartComponent,
+    GamesComponent,
+    GameCardComponent
   ],
   imports: [
     BrowserModule,

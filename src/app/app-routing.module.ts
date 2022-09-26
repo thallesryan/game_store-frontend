@@ -1,3 +1,5 @@
+import { GamesComponent } from './views/games/games.component';
+import { CartComponent } from './views/cart/cart.component';
 import { GameEditComponent } from './admin/components/game-edit/game-edit.component';
 
 import { NgModule } from '@angular/core';
@@ -22,11 +24,13 @@ const routes: Routes = [
   {
     path:'', component:NavComponent,canActivate:[AuthGuard], children:[
       {path:'home', component:HomeComponent},
+      {path:'games', component:GamesComponent},
       {path:'orders', component:MyOrdersComponent},
+      {path:'cart', component:CartComponent},
       {path:'admin',component:AdminComponent, canActivate:[AdminGuard],
         children:[{path:'games', component:CrudGamesComponent}, 
                   {path:'games/newgame', component:GameCreateComponent},
-                  {path:'games/edit/:id', component: GameEditComponent},
+                  {path:'games/update/:id', component: GameEditComponent},
                   {path:'users', component: UserListComponent}
                 ]
       }
