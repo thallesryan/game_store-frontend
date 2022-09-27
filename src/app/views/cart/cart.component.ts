@@ -19,4 +19,11 @@ export class CartComponent implements OnInit {
     console.log(this.games)
   }
 
+  clearCart(){
+    this.cartService.clearCart();
+  }
+
+  completeOrder(){
+    
+  }
 }

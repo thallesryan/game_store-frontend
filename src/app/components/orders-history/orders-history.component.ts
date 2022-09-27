@@ -11,7 +11,16 @@ import { Order } from '../../models/Order';
 })
 export class OrdersHistoryComponent implements OnInit, AfterViewInit {
 
-  orders:Order[] = [{id:1, date: '25/04/2021',total:200}]
+  orders:Order[] = [
+    {
+      id:1,
+      user:{},
+      items:[
+        {game:{},quantity:1}
+      ],
+      date: '25/04/2021',
+      total:200}
+  ]
   
     //displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
     //dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);

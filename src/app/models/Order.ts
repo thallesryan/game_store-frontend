@@ -1,7 +1,11 @@
-import { DatePipe } from "@angular/common";
+import { Game } from './Game';
+import { OrderItem } from './OrderItem';
+import { User } from "./User";
 
 export interface Order{
-    id?: number,
-    date: Date | String,
-    total: number
+    id?: number
+    user: User
+    items:OrderItem[]
+    date?: Date | String
+    total?: number
 }
