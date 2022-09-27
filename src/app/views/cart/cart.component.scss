@@ -1,11 +1,32 @@
 .containerCart{
     width: 40%;
-    height: 40rem;
+    height: 50%;
     background-color: rgb(182, 182, 191);
     margin: 1rem;
+    margin-top: 100px;
+}
+
+mat-card-title{
+    text-align: center;
+}
+mat-card{
+    height: 100%;
+}
+
+mat-card-content{
+   display: flex;
+   flex-direction: column;
+   align-content: space-between;
+   justify-content:space-between;
+   
 }
 
 .container{
     display: flex;
     flex-direction: column;
 }
+
+.title{
+    
+}
+

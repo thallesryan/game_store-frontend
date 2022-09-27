@@ -6,7 +6,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CrudGamesComponent } from './admin/components/crud-games/crud-games.component';
 import { GameCreateComponent } from './admin/components/game-create/game-create.component';
-import { AdminComponent } from './admin/views/admin/admin.component';
+
 
 import { AppComponent } from './app.component';
 import { NavComponent } from './components/nav/nav.component';
@@ -16,6 +16,7 @@ import { HomeComponent } from './views/home/home.component';
 import { LoginComponent } from './views/login/login.component';
 import { MyOrdersComponent } from './views/my-orders/my-orders.component';
 import { UserListComponent } from './admin/components/user-list/user-list.component';
+import { AdminComponent } from './admin/views/admin/admin.component';
 
 const routes: Routes = [
   {

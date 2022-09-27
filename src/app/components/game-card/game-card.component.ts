@@ -1,3 +1,4 @@
+import { Game } from './../../models/Game';
 import { CartService } from './../../services/cart.service';
 import { Component, Input, OnInit } from '@angular/core';
 
@@ -10,13 +11,13 @@ export class GameCardComponent implements OnInit {
 
   constructor(private cartService:CartService) { }
 
-  @Input() public idGame:number
+  @Input() public game:Game
 
   ngOnInit(): void {
-    console.log(this.idGame)
+    console.log(this.game)
   }
 
   addToCart(){
-    this.cartService.addToCart({id:this.idGame})
+    this.cartService.addToCart(this.game)
   }
 }

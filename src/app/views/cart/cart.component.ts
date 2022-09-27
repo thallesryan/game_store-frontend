@@ -1,3 +1,5 @@
+import { GamesService } from './../../services/games.service';
+import { Game } from './../../models/Game';
 import { CartService } from './../../services/cart.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -10,9 +12,11 @@ export class CartComponent implements OnInit {
 
   constructor(private cartService: CartService) { }
 
+  games:Game[]
+
   ngOnInit(): void {
-    let games = this.cartService.getGamesCart()
-    console.log(games)
+     this.games = this.cartService.getGamesCart()
+    console.log(this.games)
   }
 
 }
