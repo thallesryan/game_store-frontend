@@ -39,4 +39,9 @@ export class AuthService {
   logout(){
     localStorage.clear();
   }
+
+  getUserId():number{
+    let token = localStorage.getItem('token')
+    return this.jwtService.decodeToken(token).id
+  }
 }

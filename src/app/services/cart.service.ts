@@ -1,3 +1,5 @@
+import { AuthService } from 'src/app/services/auth.service';
+import { Order } from './../models/Order';
 import { API_CONFIG } from './../config/api.config';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
@@ -8,7 +10,8 @@ import { Game } from '../models/Game';
   providedIn: 'root'
 })
 export class CartService {
-  constructor( private http: HttpClient) { }
+  constructor() { }
+  
   
   private games:Game[] = []
   
@@ -26,7 +29,4 @@ export class CartService {
     this.games.splice(0, this.games.length)
   }
 
-  completeOrder():Observable<any>{
-    return this.http.post(API_CONFIG.baseURL,{})
-  }
 }
