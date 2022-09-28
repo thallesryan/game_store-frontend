@@ -1,18 +1,22 @@
-<div class="container">
-  <div class="containerCart mat-elevation-z12">
-    <mat-card>
+<section class="container">
+    <mat-card class="cardCart mat-elevation-z12">
       <mat-card-title>Carrinho</mat-card-title>
       <mat-card-content>
         <app-cart-item *ngFor="let item of games">
           <div class="title">{{item.name}}</div>
           <div class="price">{{item.price | currency:'BRL'}} </div>
-          <div class="quantity">1</div>
+          <div class="quantity">{{item.quantity}}</div>
         </app-cart-item>
       </mat-card-content>
       <mat-card-actions>
-        <button mat-button (click)="completeOrder()">Confirmar Pedido</button>
-        <button mat-button (click)="clearCart()">Limpar Carrinho</button>
+        <button mat-button [disabled]="games.length == 0" (click)="completeOrder()">Confirmar Pedido</button>
+        <button mat-button [disabled]="games.length == 0" (click)="clearCart()">Limpar Carrinho</button>
       </mat-card-actions>
     </mat-card>
-  </div>
-</div>
+
+    <app-order-summary> </app-order-summary>
+    <!--
+    <mat-card class="mat-elevation-z12 cardInfo">
+      <mat-card-title>Resumo do Pedido</mat-card-title>
+    </mat-card>rd-->
+</section>

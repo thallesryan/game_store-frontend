@@ -1,16 +1,24 @@
-.containerCart{
-    width: 40%;
-    height: 50%;
-    background-color: rgb(182, 182, 191);
-    margin: 1rem;
-    margin-top: 100px;
+.container{
+    display: flex;
+    flex-direction: row;
+    
+    height: 100%;
+    width: 100%;
+    padding-top: 100px;
+}
+.cardCart{
+    background-color: rgb(255, 255, 255);
+    margin: 0;
+    flex-grow: 1;
+    margin:0px 25px;
+   
 }
 
 mat-card-title{
     text-align: center;
 }
 mat-card{
-    height: 100%;
+    /**height: 100%;*/
 }
 
 mat-card-content{
@@ -25,11 +33,6 @@ mat-card-actions{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-}
-
-.container{
-    display: flex;
-    flex-direction: column;
 }
 
 .title{

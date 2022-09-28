@@ -22,7 +22,7 @@ export class CartComponent implements OnInit {
   games:Game[]
   orderItems:OrderItem[] = []
 
-  private order:Order = {
+    order:Order = {
     user: {id:this.authService.getUserId()},
     items: [{game:{id:0},quantity:0 }]
   }

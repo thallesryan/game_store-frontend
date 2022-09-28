@@ -47,6 +47,7 @@ import { CartComponent } from './views/cart/cart.component';
 import { GamesComponent } from './views/games/games.component';
 import { GameCardComponent } from './components/game-card/game-card.component';
 import { CartItemComponent } from './components/cart-item/cart-item.component';
+import { OrderSummaryComponent } from './components/order-summary/order-summary.component';
 
 
 registerLocaleData(localePt) 
@@ -68,7 +69,8 @@ registerLocaleData(localePt)
     CartComponent,
     GamesComponent,
     GameCardComponent,
-    CartItemComponent
+    CartItemComponent,
+    OrderSummaryComponent
   ],
   imports: [
     BrowserModule,
