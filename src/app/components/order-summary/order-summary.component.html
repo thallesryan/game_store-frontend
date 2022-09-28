@@ -1,4 +1,9 @@
 <mat-card class="mat-elevation-z12 cardInfo">
     <mat-card-title>Resumo do Pedido</mat-card-title>
     <mat-card-content>{{countProducts()}} Produto(s)</mat-card-content>
+    <hr>
+    <mat-card-footer class="footer">
+        <div>Total</div>
+        <div>{{ calcTotal() | currency:'BRL'}}</div>
+    </mat-card-footer>
 </mat-card>

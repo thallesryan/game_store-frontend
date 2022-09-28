@@ -1,8 +1,19 @@
 .cardInfo{
     margin-right: 25px;
     background-color: #888888;
+    border-radius: 10px;
+}
+
+mat-card-content{
+    text-align: center;
 }
 
 :host{
     
+}
+
+.footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
 }
