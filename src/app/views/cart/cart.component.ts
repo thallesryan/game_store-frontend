@@ -24,7 +24,10 @@ export class CartComponent implements OnInit {
 
     order:Order = {
     user: {id:this.authService.getUserId()},
-    items: [{game:{id:0},quantity:0 }]
+    items: [
+      
+    ],
+    total: 0
   }
 
   private getOrderItems(){
@@ -43,6 +46,7 @@ export class CartComponent implements OnInit {
 
   completeOrder(){
     this.getOrderItems()
+    this.calcTotal()
     this.orderService.save(this.order).subscribe({
       next: () => {
         this.clearCart()
@@ -50,5 +54,9 @@ export class CartComponent implements OnInit {
         this.router.navigate(['games'])
       }
     });
+  }
+
+  calcTotal(){
+    this.order.total = this.cartService.calcTotal()
   }
 }
