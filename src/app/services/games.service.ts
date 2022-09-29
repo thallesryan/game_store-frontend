@@ -28,4 +28,8 @@ export class GamesService {
   public update(game:Game, id:number):Observable<Game>{
     return this.http.put<Game>(`${API_CONFIG.baseURL}/admin/games/${id}`, game)
   }
+
+  public getAvailableGames():Observable<Game[]>{
+    return this.http.get<Game[]>(`${API_CONFIG.baseURL}/admin/games/available`)
+  }
 }

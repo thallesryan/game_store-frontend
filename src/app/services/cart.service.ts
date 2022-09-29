@@ -29,4 +29,8 @@ export class CartService {
     this.games.splice(0, this.games.length)
   }
 
+  calcTotal():number{
+    if(this.games.length == 0) return 0
+    return this.games.map( game => parseFloat(game.price)).reduce((ac, sum) => ac + sum);
+  }
 }
