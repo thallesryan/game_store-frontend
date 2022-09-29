@@ -14,4 +14,8 @@ export class OrdersService {
   public save(order:Order):Observable<Order>{
     return this.http.post<Order>(`${API_CONFIG.baseURL}/order`, order)
   }
+
+  public findOrders(user_id:number):Observable<Order[]>{
+    return this.http.get<Order[]>(`${API_CONFIG.baseURL}/order/${user_id}`)
+  }
 }

@@ -23,4 +23,8 @@ export class NavComponent implements OnInit {
     this.authService.logout();
     this.toast.info('Logout realizado com sucesso!', 'logout',{timeOut: 5000})
   }
+
+  userId():number{
+    return this.authService.getUserId();
+  }
 }

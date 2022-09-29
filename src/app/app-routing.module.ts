@@ -26,13 +26,13 @@ const routes: Routes = [
     path:'', component:NavComponent,canActivate:[AuthGuard], children:[
       {path:'home', component:HomeComponent},
       {path:'games', component:GamesComponent},
-      {path:'orders', component:MyOrdersComponent},
+      {path:'orders/:id', component:MyOrdersComponent},
       {path:'cart', component:CartComponent},
       {path:'admin',component:AdminComponent, canActivate:[AdminGuard],
         children:[{path:'games', component:CrudGamesComponent}, 
                   {path:'games/newgame', component:GameCreateComponent},
                   {path:'games/update/:id', component: GameEditComponent},
-                  {path:'users', component: UserListComponent}
+                  {path:'users', component: UserListComponent},
                 ]
       }
     ]

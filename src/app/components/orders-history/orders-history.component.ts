@@ -1,3 +1,5 @@
+import { ActivatedRoute } from '@angular/router';
+import { OrdersService } from './../../services/orders.service';
 import { getLocaleDateFormat } from '@angular/common';
 import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
@@ -11,54 +13,29 @@ import { Order } from '../../models/Order';
 })
 export class OrdersHistoryComponent implements OnInit, AfterViewInit {
 
-  orders:Order[] = [
-    {
-      id:1,
-      user:{},
-      items:[
-        {game:{},quantity:1}
-      ],
-      date: '25/04/2021',
-      total:200}
-  ]
+  DATA: Order[] = []
   
-    //displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
-    //dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
-
    displayedColumns: string[] = ['id', 'date', 'total', 'actions'];
-   dataSource = new MatTableDataSource<Order>(this.orders);
+   dataSource = new MatTableDataSource<Order>(this.DATA);
   
     @ViewChild(MatPaginator) paginator: MatPaginator
 
-  constructor() { }
-
+  constructor(private orderService: OrdersService, private activatedRoute: ActivatedRoute) { }
+  
+  id:number = parseInt(this.activatedRoute.snapshot.paramMap.get('id'))
+ 
   ngOnInit(): void {
+    this.orderService.findOrders(this.id).subscribe({
+      next: resp => {
+        this.DATA = resp
+        this.dataSource = new MatTableDataSource<Order>(resp);
+        this.dataSource.paginator = this.paginator;
+      }
+    })
   }
 
   ngAfterViewInit(): void {
-      this.dataSource.paginator = this.paginator
+      //this.dataSource.paginator = this.paginator
   }
   
-
-
-}
-const ELEMENT_DATA: PeriodicElement[] = [
-  {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H'},
-  {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He'},
-  {position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li'},
-  {position: 4, name: 'Beryllium', weight: 9.0122, symbol: 'Be'},
-  {position: 5, name: 'Boron', weight: 10.811, symbol: 'B'},
-  {position: 6, name: 'Carbon', weight: 12.0107, symbol: 'C'},
-  {position: 7, name: 'Nitrogen', weight: 14.0067, symbol: 'N'},
-  {position: 8, name: 'Oxygen', weight: 15.9994, symbol: 'O'},
-  {position: 9, name: 'Fluorine', weight: 18.9984, symbol: 'F'},
-  {position: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne'},
-];
-
-
-export interface PeriodicElement {
-  name: string;
-  position: number;
-  weight: number;
-  symbol: string;
 }
