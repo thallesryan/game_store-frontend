@@ -18,7 +18,6 @@ export class CartService {
 
 
   addToCart(game:Game){
-    
     let contain:boolean = false;
     let index:number
     
@@ -36,10 +35,6 @@ export class CartService {
           game.quantity = 1
           this.games.push(game);
         }
-        
-        
-        
-  
   }
 
   getGamesCart():Game[]{
@@ -52,6 +47,6 @@ export class CartService {
 
   calcTotal():number{
     if(this.games.length == 0) return 0
-    return this.games.map( game => parseFloat(game.price)).reduce((ac, sum) => ac + sum);
+    return this.games.map( game => parseFloat(game.price) * game.quantity).reduce((ac, sum) => ac + sum);
   }
 }

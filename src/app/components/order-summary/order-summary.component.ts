@@ -19,7 +19,7 @@ export class OrderSummaryComponent implements OnInit {
   }
 
   countProducts():number{
-    return this.games.length
+    return this.games.map(game => game.quantity).reduce( (ac, sum) => ac + sum)
   }
 
   calcTotal():number{
