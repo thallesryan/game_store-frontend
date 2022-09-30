@@ -3,4 +3,5 @@ export interface Game {
     name?:string
     price?:string
     quantity?:number
+    quantityCart?:number
 }

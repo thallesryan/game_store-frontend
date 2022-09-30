@@ -1,6 +1,7 @@
 import { Game } from './../../models/Game';
 import { CartService } from './../../services/cart.service';
 import { Component, Input, OnInit } from '@angular/core';
+import { FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-game-card',
@@ -13,6 +14,7 @@ export class GameCardComponent implements OnInit {
 
   @Input() public game:Game
 
+  
   ngOnInit(): void {
     console.log(this.game)
   }
@@ -20,4 +22,5 @@ export class GameCardComponent implements OnInit {
   addToCart(){
     this.cartService.addToCart(this.game)
   }
+
 }

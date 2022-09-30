@@ -18,7 +18,28 @@ export class CartService {
 
 
   addToCart(game:Game){
-    this.games.push(game);
+    
+    let contain:boolean = false;
+    let index:number
+    
+        for(let i = 0; i < this.games.length; i++){
+          if(this.games[i].id == game.id){
+            contain = true
+            index = i
+            break
+          }
+        }
+     
+        if(contain){
+          this.games[index].quantity += 1
+        }else{
+          game.quantity = 1
+          this.games.push(game);
+        }
+        
+        
+        
+  
   }
 
   getGamesCart():Game[]{

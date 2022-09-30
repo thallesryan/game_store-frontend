@@ -30,6 +30,7 @@ export class CrudGamesComponent implements OnInit {
         this.ELEMENT_DATA = resposta['content']
         this.dataSource = new MatTableDataSource<Game>(resposta['content']);
         this.dataSource.paginator = this.paginator;
+        console.log(resposta)
        }}
     )
   }
